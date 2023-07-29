@@ -6,6 +6,6 @@ COPY target/petclinic.jar $APP_HOME/petclinic.jar
 
 WORKDIR $APP_HOME
 
-EXPOSE 9000
+EXPOSE 8050
 
 CMD ['java','-jar','petclinic.jar']
