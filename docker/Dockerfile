@@ -2,6 +2,10 @@ FROM openjdk:8u151-jdk-alpine3.7
 
 EXPOSE 8050
 
-COPY target/petclinic.jar /usr/src/app/app.jar
+ENV APP_HOME /usr/src/app
 
-CMD ['java','-jar','app.jar']
+COPY target/petclinic.jar $APP_HOME/app.jar
+
+WORKDIR $APP_HOME
+
+ENTRYPOINT exec java -jar app.jar
